@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>230</width>
+    <height>388</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>230</width>
+    <height>370</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>230</width>
+    <height>388</height>
+   </size>
+  </property>
+  <property name="mouseTracking">
+   <bool>false</bool>
+  </property>
+  <property name="windowTitle">
+   <string>Hesap Makinesi</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #1C1C1C; /* Koyu siyah/gri ton */
+color: white;  </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="mod">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>105</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #6B6B6B; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #8F8F8F; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>%</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="div">
+    <property name="geometry">
+     <rect>
+      <x>169</x>
+      <y>105</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(255, 149, 0); /* Turuncu */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 20px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #FFB347; /* Üzerine gelince daha açık turuncu */
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>÷</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ResultScreen">
+    <property name="geometry">
+     <rect>
+      <x>-11</x>
+      <y>-1</y>
+      <width>231</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI Variable</family>
+      <pointsize>26</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: #1C1C1C; /* Koyu siyah/gri ton */
+color: white;              /* Yazılar için beyaz */
+</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignBottom|Qt::AlignRight|Qt::AlignTrailing</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="plusMinusSign">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>105</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #6B6B6B; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 16px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #8F8F8F; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>+/-</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="AC">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>105</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #6B6B6B; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+
+QPushButton:hover {
+    background-color: #8F8F8F; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>AC</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="times">
+    <property name="geometry">
+     <rect>
+      <x>169</x>
+      <y>160</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(255, 149, 0); /* Turuncu */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 20px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #FFB347; /* Üzerine gelince daha açık turuncu */
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>x</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="seven">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>160</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>7</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="eight">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>160</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>8</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nine">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>160</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>9</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="minus">
+    <property name="geometry">
+     <rect>
+      <x>169</x>
+      <y>215</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(255, 149, 0); /* Turuncu */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #FFB347; /* Üzerine gelince daha açık turuncu */
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>—</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="four">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>215</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="five">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>215</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>5</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="six">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>215</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>6</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="plus">
+    <property name="geometry">
+     <rect>
+      <x>169</x>
+      <y>270</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(255, 149, 0); /* Turuncu */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 20px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #FFB347; /* Üzerine gelince daha açık turuncu */
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>+</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="one">
+    <property name="geometry">
+     <rect>
+      <x>7</x>
+      <y>270</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>1</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="two">
+    <property name="geometry">
+     <rect>
+      <x>61</x>
+      <y>270</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>2</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="three">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>270</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 18px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>3</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="equal">
+    <property name="geometry">
+     <rect>
+      <x>169</x>
+      <y>325</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: rgb(255, 149, 0); /* Turuncu */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 20px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #FFB347; /* Üzerine gelince daha açık turuncu */
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string>=</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="zero">
+    <property name="geometry">
+     <rect>
+      <x>11</x>
+      <y>325</y>
+      <width>101</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 20px;           /* Yazı boyutu */
+	text-align:left;
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="dot">
+    <property name="geometry">
+     <rect>
+      <x>115</x>
+      <y>325</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #505050; /* Orta gri */
+    color: white;              /* Beyaz yazı */
+    border: none;              /* Kenarlık yok */
+    border-radius: 25px;       /* Tam yuvarlak */
+    padding: 15px;             /* İç boşluk */
+    font-size: 20px;           /* Yazı boyutu */
+}
+
+QPushButton:hover {
+    background-color: #6B6B6B; /* Üzerine gelince daha açık gri */
+}
+</string>
+    </property>
+    <property name="text">
+     <string>.</string>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
